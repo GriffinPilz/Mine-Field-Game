@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mineGame</title>
+
+    <link rel="stylesheet" href="css.css">
+</head>
+<body onkeydown="checkKey(event)" onload="loadDimension()" id="body">
+    <div id="square"></div>
+    <div id="finish"></div>
+    <audio controls >
+        <source src="droplet.mp3" type="audio/mpeg" id="sound1">
+        <source src="openingBeat.mp3" type="audio/mpeg" id="openingSound">
+    </audio>
+    <div id="levelCounter"></div>
+    <div id="mineFieldText">
+        <h1>MineField.io</h1>
+    </div>
+    <div class="buttondiv" id="sgButton">
+        <button onclick="startGame()">Start Game</button>
+    </div>
+    <div class="buttondiv" id="htpButton">
+        <button onclick="showHowToPlay()">How to Play</button>
+    </div>
+
+    <script rel="script" src="javascript.js"></script>
+</body>
+</html>
