@@ -98,10 +98,13 @@ audio {
     margin-top: 80px;
     text-align: center;
     font-size: 1.5em;
+    color: rgba(0,0,0,.95);
 }
 
 div.buttondiv {
     text-align: center;
+    margin: auto;
+    width: 100%;
 }
 
 button {
@@ -115,3 +118,22 @@ button {
     margin: 20px 0;
 }
 
+div#paragraphText {
+    padding: 10px 140px 0 140px;
+    color: rgba(0,0,0,.85);
+    font-size: 1.2em;
+    text-align: center;
+    display: none;
+}
+
+#instructionsText {
+    margin-top: 80px;
+    text-align: center;
+    font-size: 1.5em;
+    color: rgba(0,0,0,.95);
+    display: none;
+}
+
+#sgButton2 {
+    display: none;
+}

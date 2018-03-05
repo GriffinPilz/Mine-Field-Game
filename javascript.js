@@ -26,12 +26,18 @@ function startGame() {
     document.getElementById("levelCounter").style.display = "inline";
     document.getElementById("square").style.display = "inline";
     document.getElementById("finish").style.display = "inline";
+    document.getElementById("sgButton2").style.display = "none";
+    document.getElementById("paragraphText").style.display = "none";
+    document.getElementById("instructionsText").style.display = "none";
 }
 
 function showHowToPlay() {
     document.getElementById("mineFieldText").style.display = "none";
     document.getElementById("htpButton").style.display = "none";
     document.getElementById("sgButton").style.display = "none";
+    document.getElementById("sgButton2").style.display = "inline";
+    document.getElementById("paragraphText").style.display = "inline";
+    document.getElementById("instructionsText").style.display = "inline";
 }
 
 function checkKey(event) {
@@ -83,7 +89,7 @@ function setFinish() {
 
 
 function plantMines() {
-    let mines = (level * 2) + 5;
+    let mines = (level * 3) + 8;
     for (i=0; i<mines; i++){
         let xCoord = Math.floor(Math.random()*window.innerWidth);
         let yCoord = Math.floor(Math.random()*window.innerHeight);
@@ -134,10 +140,13 @@ function roundLoss() {
 function playSound() {
 
     if (soundLoop === 2){
+        playLoop();
         this.intervalLong = window.setInterval(playLoop, 1000);
     } else if (soundLoop === 1) {
+        playLoop();
         this.intervalMedium = window.setInterval(playLoop, 500);
     } else if (soundLoop === 0) {
+        playLoop();
         this.intervalsmall = window.setInterval(playLoop, 100);
     }
 }
@@ -157,13 +166,13 @@ function solveDistance() {
     distanceArray.sort(function(a, b){return a - b});
     console.log(distanceArray);
     let dp = distanceArray[0];
-    if (dp < 21){
+    if (dp < 31){
         soundLoop = 0;
-    } else if ( dp >= 21 && dp <41){
+    } else if ( dp >= 31 && dp <61){
         soundLoop = 1;
-    } else if (dp >= 41 && dp < 61){
+    } else if (dp >= 61 && dp < 91){
         soundLoop = 2;
-    } else if (dp >= 61 ){
+    } else if (dp >= 91 ){
         soundLoop = 3;
     }
     console.log(soundLoop);
