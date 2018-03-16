@@ -12,6 +12,9 @@ let endPoint = {bxCoordinate: 0, byCoordinate: 0};
 let soundLoop = 3;
 let audio = new Audio('droplet.mp3');
 
+let openingSoundLoop = 1;
+let openingAudio = new Audio('openingBeat.mp3');
+
 solveDistance();
 
 let playLoop = function () {
@@ -19,25 +22,21 @@ let playLoop = function () {
     console.log("played");
 };
 
+let playOpeningLoop = function () {
+    openingAudio.play();
+    console.log("played");
+};
+
 function startGame() {
-    document.getElementById("mineFieldText").style.display = "none";
-    document.getElementById("htpButton").style.display = "none";
-    document.getElementById("sgButton").style.display = "none";
-    document.getElementById("levelCounter").style.display = "inline";
-    document.getElementById("square").style.display = "inline";
-    document.getElementById("finish").style.display = "inline";
-    document.getElementById("sgButton2").style.display = "none";
-    document.getElementById("paragraphText").style.display = "none";
-    document.getElementById("instructionsText").style.display = "none";
+    document.getElementById("openingDiv").style.display = "none";
+    document.getElementById("gameDiv").style.display = "inline";
+    document.getElementById("instructionsDiv").style.display = "none";
+    clearInterval(this.openingInterval);
 }
 
 function showHowToPlay() {
-    document.getElementById("mineFieldText").style.display = "none";
-    document.getElementById("htpButton").style.display = "none";
-    document.getElementById("sgButton").style.display = "none";
-    document.getElementById("sgButton2").style.display = "inline";
-    document.getElementById("paragraphText").style.display = "inline";
-    document.getElementById("instructionsText").style.display = "inline";
+    document.getElementById("openingDiv").style.display = "none";
+    document.getElementById("instructionsDiv").style.display = "inline";
 }
 
 function checkKey(event) {
@@ -151,6 +150,14 @@ function playSound() {
     }
 }
 
+function playOpeningSound() {
+
+    if (openingSoundLoop === 1){
+        playOpeningLoop();
+        this.openingInterval = window.setInterval(playOpeningLoop, 1500);
+    }
+}
+
 function clearTheInterval() {
     clearInterval(this.intervalLong);
     clearInterval(this.intervalMedium);
@@ -179,3 +186,5 @@ function solveDistance() {
     clearTheInterval();
     playSound();
 }
+
+playOpeningSound();

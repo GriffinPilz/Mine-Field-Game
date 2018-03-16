@@ -16,7 +16,6 @@ body {
     animation-direction: normal;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-    display: none;
 }
 
 #finish {
@@ -31,7 +30,6 @@ body {
     animation-direction: normal;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-    display: none;
 }
 
 audio {
@@ -52,7 +50,6 @@ audio {
     animation-direction: normal;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-    display: none;
 }
 
 @keyframes stretch {
@@ -123,7 +120,6 @@ div#paragraphText {
     color: rgba(0,0,0,.85);
     font-size: 1.2em;
     text-align: center;
-    display: none;
 }
 
 #instructionsText {
@@ -131,9 +127,15 @@ div#paragraphText {
     text-align: center;
     font-size: 1.5em;
     color: rgba(0,0,0,.95);
-    display: none;
 }
 
 #sgButton2 {
+}
+
+#instructionsDiv {
+    display: none;
+}
+
+#gameDiv {
     display: none;
 }
